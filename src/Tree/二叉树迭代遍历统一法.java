@@ -1,6 +1,4 @@
-package Tree.二叉树;
-
-import Tree.TreeNode;
+package Tree;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,16 +19,11 @@ import java.util.Stack;
 
 public class 二叉树迭代遍历统一法 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        TreeNode node = new TreeNode(1);
-        node.left = null;
-        node.right = new TreeNode(2,new TreeNode(3,null,null),null);
-        solution.preorderTraversal(node);
     }
 
 }
 
-class Solution {
+class Solution11 {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
