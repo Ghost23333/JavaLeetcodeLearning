@@ -2,21 +2,20 @@ package Tree.二叉树层序遍历;
 
 import Tree.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @author chenhong
  * @version 1.0.0
- * @ClassName L199.java
- * @Description TODO dfs版本
- * @createTime 2022年09月02日 17:40:00
+ * @ClassName L515.java
+ * @Description TODO
+ * @createTime 2022年09月04日 21:05:00
  */
+public class L515 {
+}
 
-public class L199 {
-    public List<Integer> rightSideView(TreeNode root) {
+class Solution515 {
+    public List<Integer> largestValues(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if(root == null){
             return new ArrayList<>();
@@ -25,9 +24,10 @@ public class L199 {
         queue.offer(root);
         while (!queue.isEmpty()){
             int len = queue.size();
-            TreeNode temp = null;
-            while(len > 0){
-                temp = queue.poll();
+            int max = Integer.MIN_VALUE;
+            while (len > 0){
+                TreeNode temp = queue.poll();
+                max = Math.max(max,temp.val);
                 if(temp.left !=null){
                     queue.add(temp.left);
                 }
@@ -36,9 +36,9 @@ public class L199 {
                 }
                 len--;
             }
-            res.add(temp.val);
-
+            res.add(max);
         }
         return res;
+
     }
 }

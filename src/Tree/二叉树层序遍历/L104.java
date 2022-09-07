@@ -10,24 +10,26 @@ import java.util.Queue;
 /**
  * @author chenhong
  * @version 1.0.0
- * @ClassName L199.java
- * @Description TODO dfs版本
- * @createTime 2022年09月02日 17:40:00
+ * @ClassName L104.java
+ * @Description TODO
+ * @createTime 2022年09月06日 22:54:00
  */
-
-public class L199 {
-    public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
+public class L104 {
+}
+class Solution104 {
+    //bfs
+    public int maxDepth(TreeNode root) {
+        int count = 0;
         if(root == null){
-            return new ArrayList<>();
+            return 0;
         }
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()){
+            count ++;
             int len = queue.size();
-            TreeNode temp = null;
             while(len > 0){
-                temp = queue.poll();
+                TreeNode temp = queue.poll();
                 if(temp.left !=null){
                     queue.add(temp.left);
                 }
@@ -36,9 +38,17 @@ public class L199 {
                 }
                 len--;
             }
-            res.add(temp.val);
-
         }
-        return res;
+        return count;
+    }
+
+    //dfs递归
+    public int maxDepth2(TreeNode root){
+        if(root == null){
+            return 0;
+        }
+        int a = maxDepth2(root.left);
+        int b = maxDepth2(root.right);
+        return Math.max(a,b) + 1;
     }
 }
