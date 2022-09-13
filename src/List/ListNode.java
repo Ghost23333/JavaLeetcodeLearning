@@ -8,10 +8,16 @@ package List;
  * @createTime 2020年12月04日 21:32:00
  */
 
- public class ListNode {
-     int val;
-     ListNode next;
-     ListNode prev;
-     ListNode(int x) { val = x; }
- }
+public class ListNode {
+    int val;
+    ListNode next;
+    ListNode prev;
+
+    ListNode() {
+    }
+
+    ListNode(int x) {
+        val = x;
+    }
+}
 
