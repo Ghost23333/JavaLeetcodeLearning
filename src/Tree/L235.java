@@ -10,7 +10,7 @@ package Tree;
 public class L235 {
 }
 
-class Solution {
+class Solution235 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         TreeNode node = root;
         while (true){
@@ -22,5 +22,15 @@ class Solution {
                 return node;
         }
 
+    }
+
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        if(root.val > p.val && root.val > q.val){
+            return lowestCommonAncestor2(root.left,p,q);
+        }
+        if(root.val <p.val && root.val < q.val){
+            return lowestCommonAncestor2(root.right,p,q);
+        }
+        return root;
     }
 }
