@@ -13,18 +13,17 @@ import java.util.Deque;
 public class L55 {
 }
 
-class Solution {
+/*class Solution {
     public boolean canJump(int[] nums) {
 
         if(nums.length == 1)
             return true;
         for(int i = 0;i< nums.length;i++){
             for(int j = 0;j<nums[i] - 1;j++){
-                if(fun(nums) == false){
+                if(!fun(nums)){
                     nums[i] --;
                 }else{
                     return true;
-
                 }
             }
         }
@@ -38,8 +37,20 @@ class Solution {
             if(nums[i] == 0)
                 return false;
             i = nums[i] + i;
-            if(i < nums.length){
-                continue;
+        }
+        return false;
+    }
+}*/
+
+class Solution55{
+    public boolean canJump(int[] nums) {
+        if(nums.length == 1)
+            return true;
+        int coverRange = 0;
+        for (int i = 0; i <= coverRange; i++) {
+            coverRange = Math.max(coverRange,nums[i] + i);
+            if(coverRange >= nums.length - 1){
+                return true;
             }
         }
         return false;
