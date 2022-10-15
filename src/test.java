@@ -7,7 +7,9 @@
  */
 public class test {
     public static void main(String[] args) {
-
+        int mod = 98987;
+        System.out.println(12131% mod +   123%mod);
+        System.out.println((12131 + 123) % mod);
     }
 
 }
