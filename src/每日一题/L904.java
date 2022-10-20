@@ -11,10 +11,10 @@ import java.util.Base64;
  */
 public class L904 {
     public static void main(String[] args) {
-        new Solution().totalFruit(new int[]{3,3,3,1,2,1,1,2,3,3,4});
+        new Solution904().totalFruit(new int[]{3,3,3,1,2,1,1,2,3,3,4});
     }
 }
-class Solution {
+class Solution904 {
     public int totalFruit(int[] fruits) {
         if(fruits.length <= 2)
             return fruits.length;
