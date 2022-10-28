@@ -9,9 +9,9 @@ package DP;
  */
 public class beibao {
     public static void main(String[] args) {
-        int[] weight = {1, 3, 4};
-        int[] value = {15, 20, 30};
-        int bagWight = 4;
+        int[] weight = {31,26,33,21,40};
+        int[] value = {31,26,33,21,40};
+        int bagWight = 75;
         testWeightBagProblem(weight, value, bagWight);
     }
 

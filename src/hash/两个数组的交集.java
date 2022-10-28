@@ -2,7 +2,6 @@ package hash;
 
 import java.util.HashSet;
 import java.util.Set;
-
 /**
  * @author chenhong
  * @version 1.0.0
