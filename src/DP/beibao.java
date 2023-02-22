@@ -9,9 +9,9 @@ package DP;
  */
 public class beibao {
     public static void main(String[] args) {
-        int[] weight = {31,26,33,21,40};
-        int[] value = {31,26,33,21,40};
-        int bagWight = 75;
+        int[] weight = {2, 2, 6, 5, 4};
+        int[] value = {6,3,5,4,6};
+        int bagWight = 10;
         testWeightBagProblem(weight, value, bagWight);
     }
 
@@ -25,9 +25,8 @@ public class beibao {
                 dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
             }
         }
-        //打印dp数组
-        for (int j = 0; j <= bagWeight; j++){
-            System.out.print(dp[j] + " ");
-        }
+        //打印结果
+        System.out.println(dp[dp.length - 1]);
+
     }
 }
